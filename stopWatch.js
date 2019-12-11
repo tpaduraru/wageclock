@@ -8,6 +8,7 @@ var tInterval;
 var savedTime;
 var paused = 0;
 var running = 0;
+var wage = 10.00;
 
 function startTimer(){
   if(!running){
@@ -68,6 +69,9 @@ function getShowTime(){
   } else {
     difference =  updatedTime - startTime;
   }
+  
+  var earned = wage * (difference / 1000 / 60 / 60);
+  
   // var days = Math.floor(difference / (1000 * 60 * 60 * 24));
   var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
@@ -78,5 +82,5 @@ function getShowTime(){
   minutes = (minutes < 10) ? "0" + minutes : minutes;
   seconds = (seconds < 10) ? "0" + seconds : seconds;
   milliseconds = (milliseconds < 100) ? (milliseconds < 10) ? "00" + milliseconds : "0" + milliseconds : milliseconds;
-  timerDisplay.innerHTML = hours + ':' + minutes + ':' + seconds + ':' + milliseconds;
+  timerDisplay.innerHTML = "$" + earned.toFixed(3) + " - (" + hours + ':' + minutes + ':' + seconds + ")";
 }
