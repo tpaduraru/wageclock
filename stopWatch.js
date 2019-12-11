@@ -15,9 +15,9 @@ function startTimer(){
     tInterval = setInterval(getShowTime, 1);
     paused = 0;
     running = 1;
-    timerDisplay.style.background = "#FF0000";
+    timerDisplay.style.background = "#FFF";
     timerDisplay.style.cursor = "auto";
-    timerDisplay.style.color = "yellow";
+    timerDisplay.style.color = "black
     startTimerButton.classList.add('lighter');
     pauseTimerButton.classList.remove('lighter');
     startTimerButton.style.cursor = "auto";
@@ -33,8 +33,8 @@ function pauseTimer(){
     savedTime = difference;
     paused = 1;
     running = 0;
-    timerDisplay.style.background = "#A90000";
-    timerDisplay.style.color = "#690000";
+    timerDisplay.style.background = "#A9A9A9;
+    timerDisplay.style.color = "#696969;
     timerDisplay.style.cursor = "pointer";
     startTimerButton.classList.remove('lighter');
     pauseTimerButton.classList.add('lighter');
@@ -52,8 +52,8 @@ function resetTimer(){
   paused = 0;
   running = 0;
   timerDisplay.innerHTML = 'Start Studying!';
-  timerDisplay.style.background = "#A90000";
-  timerDisplay.style.color = "#fff";
+  timerDisplay.style.background = "#A9A9A9
+  timerDisplay.style.color = "#FFF
   timerDisplay.style.cursor = "pointer";
   startTimerButton.classList.remove('lighter');
   pauseTimerButton.classList.remove('lighter');
