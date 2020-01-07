@@ -1,6 +1,7 @@
 var startTimerButton = document.querySelector('.startTimer');
 var pauseTimerButton = document.querySelector('.pauseTimer');
 var timerDisplay = document.querySelector('.timer');
+var wage = document.querySelector('#wageInput').value;
 var startTime;
 var updatedTime;
 var difference;
@@ -8,7 +9,6 @@ var tInterval;
 var savedTime;
 var paused = 0;
 var running = 0;
-var wage = 10.00;
 
 function startTimer(){
   if(!running){
@@ -23,6 +23,9 @@ function startTimer(){
     pauseTimerButton.classList.remove('lighter');
     startTimerButton.style.cursor = "auto";
     pauseTimerButton.style.cursor = "pointer";
+    
+    document.querySelector('#wageInput').disabled= true;
+    wage = document.querySelector('#wageInput').value;
   }
 }
 
@@ -60,6 +63,8 @@ function resetTimer(){
   pauseTimerButton.classList.remove('lighter');
   startTimerButton.style.cursor = "pointer";
   pauseTimerButton.style.cursor = "auto";
+  
+  document.querySelector('#wageInput').disabled= false;
 }
 
 function getShowTime(){
